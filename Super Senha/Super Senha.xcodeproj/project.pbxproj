@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF8073CD2376FAD6005FAFF7 /* PasswordGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8073CC2376FAD6005FAFF7 /* PasswordGenerator.swift */; };
+		DF8073CF2376FD18005FAFF7 /* SecurityTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8073CE2376FD18005FAFF7 /* SecurityTipsViewController.swift */; };
 		DFF72E8D237628C700D4FFA1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF72E8C237628C700D4FFA1 /* AppDelegate.swift */; };
 		DFF72E8F237628C700D4FFA1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF72E8E237628C700D4FFA1 /* SceneDelegate.swift */; };
 		DFF72E91237628C700D4FFA1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF72E90237628C700D4FFA1 /* ViewController.swift */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF8073CC2376FAD6005FAFF7 /* PasswordGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGenerator.swift; sourceTree = "<group>"; };
+		DF8073CE2376FD18005FAFF7 /* SecurityTipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecurityTipsViewController.swift; sourceTree = "<group>"; };
 		DFF72E89237628C700D4FFA1 /* Super Senha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Super Senha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF72E8C237628C700D4FFA1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DFF72E8E237628C700D4FFA1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -58,14 +62,16 @@
 		DFF72E8B237628C700D4FFA1 /* Super Senha */ = {
 			isa = PBXGroup;
 			children = (
-				DFF72E8C237628C700D4FFA1 /* AppDelegate.swift */,
-				DFF72E8E237628C700D4FFA1 /* SceneDelegate.swift */,
 				DFF72E90237628C700D4FFA1 /* ViewController.swift */,
+				DFF72EA02376438600D4FFA1 /* PasswordGeneratorViewController.swift */,
+				DF8073CE2376FD18005FAFF7 /* SecurityTipsViewController.swift */,
+				DFF72E8C237628C700D4FFA1 /* AppDelegate.swift */,
+				DF8073CC2376FAD6005FAFF7 /* PasswordGenerator.swift */,
+				DFF72E8E237628C700D4FFA1 /* SceneDelegate.swift */,
 				DFF72E92237628C700D4FFA1 /* Main.storyboard */,
 				DFF72E95237628D100D4FFA1 /* Assets.xcassets */,
 				DFF72E97237628D100D4FFA1 /* LaunchScreen.storyboard */,
 				DFF72E9A237628D100D4FFA1 /* Info.plist */,
-				DFF72EA02376438600D4FFA1 /* PasswordGeneratorViewController.swift */,
 			);
 			path = "Super Senha";
 			sourceTree = "<group>";
@@ -141,9 +147,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DF8073CF2376FD18005FAFF7 /* SecurityTipsViewController.swift in Sources */,
 				DFF72E91237628C700D4FFA1 /* ViewController.swift in Sources */,
 				DFF72EA12376438600D4FFA1 /* PasswordGeneratorViewController.swift in Sources */,
 				DFF72E8D237628C700D4FFA1 /* AppDelegate.swift in Sources */,
+				DF8073CD2376FAD6005FAFF7 /* PasswordGenerator.swift in Sources */,
 				DFF72E8F237628C700D4FFA1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

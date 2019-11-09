@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="width" constant="80" id="hA2-tQ-uco"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="cc-number"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total de Caracteres" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHG-ON-WdD">
                                 <rect key="frame" x="24" y="210" width="158" height="22"/>
@@ -43,7 +43,7 @@
                                     <constraint firstAttribute="width" constant="80" id="omq-b2-AlC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" textContentType="cc-number"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usar letras minúsculas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5pg-sg-GFd">
                                 <rect key="frame" x="24" y="256" width="183" height="22"/>
@@ -140,6 +140,14 @@
                     <navigationItem key="navigationItem" title="Gerador de Senhas" id="6cP-2t-3SC">
                         <barButtonItem key="backBarButtonItem" title="Gerador de Senhas" id="1hN-ez-g10"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="swCaptitalLetters" destination="3B8-a4-br5" id="mzp-6j-gnj"/>
+                        <outlet property="swLetters" destination="HeH-eg-l0Y" id="6LT-tO-xwS"/>
+                        <outlet property="swNumbers" destination="KND-as-JDO" id="yBa-cl-v2o"/>
+                        <outlet property="swSpecialCharacters" destination="JPV-1j-Fv1" id="3Jo-lo-0kd"/>
+                        <outlet property="tfNumberOfCharacters" destination="lVH-gU-uaI" id="eAZ-bB-gDA"/>
+                        <outlet property="tfTotalPasswords" destination="7CC-bx-lX8" id="kRX-Ar-imM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -159,6 +167,9 @@
                                 <state key="normal" title="Dicas de Segurança">
                                     <color key="titleColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="Vdh-Gl-roF" kind="presentation" id="DVA-Mu-85U"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5BJ-Kn-Cx5">
                                 <rect key="frame" x="16" y="742" width="382" height="44"/>
@@ -170,6 +181,9 @@
                                 <state key="normal" title="Gerar Novamente">
                                     <color key="titleColor" red="0.59607843140000005" green="0.14117647059999999" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="generate:" destination="Pcn-ah-c3X" eventType="touchUpInside" id="W27-df-5HN"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="AAAA" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x5J-48-OhS">
                                 <rect key="frame" x="24" y="163" width="366" height="555"/>
@@ -194,10 +208,93 @@
                         <viewLayoutGuide key="safeArea" id="LB8-Zy-Cql"/>
                     </view>
                     <navigationItem key="navigationItem" title="Lista de Senhas" id="wDt-3u-bIv"/>
+                    <connections>
+                        <outlet property="tvPasswords" destination="x5J-48-OhS" id="qxP-Uq-HCL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="heO-Sq-wha" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1921.7391304347827" y="89.732142857142847"/>
+        </scene>
+        <!--Security Tips View Controller-->
+        <scene sceneID="wdY-XU-Zyg">
+            <objects>
+                <viewController id="Vdh-Gl-roF" customClass="SecurityTipsViewController" customModule="Super_Senha" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fdc-kG-fDx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10 dicas para ter uma senha forte" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p9t-cT-whQ">
+                                <rect key="frame" x="72" y="12" width="270" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.59607843140000005" green="0.14117647059999999" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="h8V-AT-uoa">
+                                <rect key="frame" x="24" y="57" width="366" height="719"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">1. Escolha senhas faceis de lembrar 
+Uma senha facil de guardar na memoria evita que o usuario tenha que anota-la em papeis ou arquivos, que podem chegar as maos de pessoas erradas.
+
+2. Nao use palavras reais 
+Uma palavra que pode ser encontrada no dicionario pode facilitar o trabalho de hackers. Para tornar esse trabalho mais difícil, use frases ao inves de substantivos.
+
+3.  Combine maiusculas, minusculas, numeros e caracteres nao alfanumericos
+A insercao desses itens na senha complica ainda mais o trabalho de quem estiver mal intencionado.
+
+4.  Nao recicle senhas
+Por exemplo, não use "senha1 ‘, ' senha2 ‘, ' senha3 ' em contas diferentes. Ao mudar apenas um caractere, o usuário corre o risco de entregar o acesso a outros serviços ao cibercriminoso
+
+5. Não use a mesma senha para várias contas
+O mesmo se aplica nesse caso. Caso o pior aconteça, o usuário perde a segurança de todas as suas contas.
+
+6.   Não use senhas óbvias que podem ser facilmente descobertas
+Não escolha como código o nome de pessoas da família, como filho, marido ou até do animal de estimação. Ao investigar levemente a vida de alguém, esses nomes são facilmente descobertos e podem se tornar uma arma.
+
+7.  Não compartilhe sua senha
+Nunca compartilhe suas informações pessoais. Se alguma empresa pedir sua senha, mesmo que por telefone, não informe. Lembre-se, você não sabe quem está do outro lado da linha telefônica.
+
+8.  Se algum site enviar um e-mail de confirmação com uma nova senha, inicie uma nova sessão na página e altere sua senha imediatamente
+Esse procedimento evita possíveis fraudes. Ao abrir links suspeitos, o usuário pode acabar fornecendo informações pessoais sem perceber.
+
+9.     Certifique-se de que seu software de segurança da Internet bloqueie as intenções dos cibercriminosos de interceptar ou roubar senhas
+Muitos ataques podem ser evitados ao ativar serviços básicos de proteção na internet dos antivírus.
+
+10.  Se você achar que é difícil lembrar-se de várias senhas complexas, considere a instalação de um gerenciadores de senhas 
+Há diversos programas disponíveis que armazenam os dados de maneira segura e ajudam os mais esquecidos.</string>
+                                <color key="textColor" red="0.59607843140000005" green="0.14117647059999999" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfG-jL-GkV">
+                                <rect key="frame" x="334" y="784" width="56" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Fechar">
+                                    <color key="titleColor" red="0.59607843140000005" green="0.14117647059999999" blue="0.39607843139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="close:" destination="Vdh-Gl-roF" eventType="touchUpInside" id="bwJ-AC-OwC"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="981-C2-2sH" firstAttribute="trailing" secondItem="dfG-jL-GkV" secondAttribute="trailing" constant="24" id="5M7-Gc-mXX"/>
+                            <constraint firstItem="p9t-cT-whQ" firstAttribute="top" secondItem="981-C2-2sH" secondAttribute="top" constant="12" id="EVO-sm-CZJ"/>
+                            <constraint firstAttribute="bottom" secondItem="dfG-jL-GkV" secondAttribute="bottom" constant="24" id="a0c-sF-DM7"/>
+                            <constraint firstItem="981-C2-2sH" firstAttribute="trailing" secondItem="h8V-AT-uoa" secondAttribute="trailing" constant="24" id="csP-4M-wNA"/>
+                            <constraint firstItem="h8V-AT-uoa" firstAttribute="top" secondItem="p9t-cT-whQ" secondAttribute="bottom" constant="24" id="gGn-6g-xJE"/>
+                            <constraint firstItem="h8V-AT-uoa" firstAttribute="leading" secondItem="981-C2-2sH" secondAttribute="leading" constant="24" id="jZt-hR-SMz"/>
+                            <constraint firstItem="p9t-cT-whQ" firstAttribute="centerX" secondItem="fdc-kG-fDx" secondAttribute="centerX" id="xpJ-G6-ac3"/>
+                            <constraint firstItem="dfG-jL-GkV" firstAttribute="top" secondItem="h8V-AT-uoa" secondAttribute="bottom" constant="8" id="yRG-Bf-NLD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="981-C2-2sH"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Zce-qb-Cy7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Len-lL-UiX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2808.6956521739135" y="89.732142857142847"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6eS-Y2-6JA">
